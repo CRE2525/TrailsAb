@@ -1,0 +1,91 @@
+<!-- EJS file for trail show page [Done]-->
+
+<%- include("../partials/header") %>
+<% console.log(trail); %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h3>
+				Trail Information:
+			</h3>
+			<div class="list-group">
+				<li class="list-group-item"><strong>Location:</strong> <%= trail.location %></li>
+				<li class="list-group-item"><strong>Length:</strong> <%= trail.distance %>km</li>
+				<li class="list-group-item">
+					<strong>Rating:</strong>
+					<% if(trail.rating < 3) { %> 
+						<span class="low-rating">
+							<% for (var i=0; i<trail.rating; i++) { %>
+								<i class="fas fa-bicycle"></i> 
+							<% } %>
+						</span>
+					<% } else { %>
+						<span class="high-rating">
+							<% for (var i=0; i<trail.rating; i++) { %>
+								<i class="fas fa-bicycle"></i> 
+							<% } %>
+						</span>
+					<% } %>
+				</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<div>
+					<img id="show_img" class="image-responsive" alt="Image not found :(" src="<%= trail.image %>">
+					<div class="caption">
+						<h4>
+							<a><%= trail.name %></a>
+						</h4>
+						<p>
+							<%= trail.desc %>
+						</p>
+						<p>
+							<em>Submitted by <%= trail.author.username %></em>
+						</p>
+						<% if(current_user && (trail.author.id.equals(current_user._id) || current_user.isAdmin)){ %>
+							<a class="btn btn-warning" href="/trails/<%= trail._id %>/edit">Edit</a>
+							<form class="delete_form" action="/trails/<%= trail._id %>?_method=DELETE" method="POST">
+								<button class="btn btn-danger">
+									Delete
+								</button>
+							</form>
+						<% } %>
+					</div>
+				</div>
+			</div>
+			<div class="well">
+				<div class="text-right">
+					<p>
+						<a class="btn btn-success" href="/trails/<%= trail._id %>/comments/new">Add New Comment</a>
+					</p>
+				</div>
+				<hr>
+				<% trail.comments.forEach(function(comment){ %>
+					<div class="row">
+						<div class="col-md-12">
+							<strong><%= comment.author.username %></strong>
+							<!-- <span class="pull-right">10 days ago</span> -->
+							<p>
+								<%= comment.text %>
+							</p>
+								<% if(current_user && (trail.author.id.equals(current_user._id) || current_user.isAdmin)){ %>
+									<a class="btn btn-xs btn-warning" href="/trails/<%=trail._id %>/comments/<%=comment._id %>/edit">
+										Edit
+									</a>
+									<form class="delete_form" action="/trails/<%= trail._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+										<button class="btn btn-xs btn-danger">
+											Delete
+										</button>
+									</form>
+								<% } %>
+						</div>
+					</div>
+				<% }) %>
+			</div>
+			<a class="btn btn-info btn-md" href="/trails">Back to all trails</a>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

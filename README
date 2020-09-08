@@ -1,0 +1,36 @@
+Trails Alberta - Made by Connor Ibbotson
+
+=========== What's this site? ==========
+
+This website was made for any cyclists in and around the province of Alberta, looking to show off some of the excellent hiking and biking locations to other outdoors people.
+The site has a user-based review system, where people can sign in and leave reviews and comments on trails. Features include:
+	-Trail profiles with information such as location, images, ratings, and more!
+	-Comments which can be left by anyone signed in
+	-The ability to edit and delete all posts and comments
+	-Authentication and security thanks to passport JS
+	-Administrator roles for owners
+
+=========== How was it made? ===========
+
+The site backend is built on Node.js, Express, and MongoDB. MongoDB Atlas and Heroku are also used to get the website up and running on the internet. As for the front end, HTML5 and CSS3 in combination 
+with Bootstrap are used. The entire project was constructed on GoormIDE. 
+
+NPM packages used include:
+	-Passport JS -> Integrated to handle authentication and user security
+	-Mongoose -> Added to help access MongoDB
+	-Body-Parser -> Used to help handle route requests
+	-Flash -> Provides flash messages to user in certain situations
+	
+============= What's next? =============
+
+A list of future features I hope to implement include:
+-Location with google maps API or something similair
+-Searching for reviews
+-Sorting by rating
+
+========================================
+
+Currently in version 1
+
+
+Thanks for viewing!! :D

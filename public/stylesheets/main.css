@@ -1,0 +1,56 @@
+/* CSS file for everything aside from landing page */
+/* organized alphabetically [Done] */
+
+#about-para {
+	margin-bottom: 5%;	
+}
+
+body {
+	padding-bottom: 20px;
+}
+
+.center-form {
+	width: 30%;
+	margin: 30px auto;
+}
+
+.center-me {
+	text-align: center;
+}
+
+.delete_form {
+	display: inline;
+}
+
+.high-rating {
+	color: green;
+}
+
+.low-rating {
+	color: red;
+}
+
+#show_img{
+	width: 100%;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.thumbnail {
+	padding: 0;
+}
+
+.thumbnail img {
+	width: 100%;
+	max-width: 260.5px;
+	max-height: 170.84px;
+	object-fit: cover;
+}
+
+#thumbnail_show{
+	padding: 5px;
+}
+
+.title-center {
+	text-align: center;
+}

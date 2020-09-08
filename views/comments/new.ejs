@@ -1,0 +1,26 @@
+<!-- EJS file for create comment page [Done]-->
+
+<%- include("../partials/header") %>
+
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center">
+			Create Comment for <%= trail.name %>
+		</h1>
+		<div style="width: 30%; margin: 30px auto">
+			<form action="/trails/<%= trail._id %>/comments" method="POST">
+				<div class="form-group">
+					<input class="form-control" type="text" name="comment[text]" placeholder="Text">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lg btn-success btn-block">
+						Submit
+					</button>
+				</div>
+			</form>
+			<a style="text-align: center; display: block"; href= "/trails">Back</a>
+		</div>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>

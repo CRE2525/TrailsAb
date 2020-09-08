@@ -1,0 +1,35 @@
+<!-- EJS file for trails display page [Done]-->
+
+<%- include("../partials/header") %>
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container">
+			<h1>
+				Check Out Trails Here!
+			</h1>
+			<p>
+				Browse the gallery of amazing trails.
+			</p>
+			<p>
+				<a class="btn btn-success btn-lg" href= "/trails/new">Create New trail</a>
+			</p>
+		</div>
+	</header>
+	
+	<div class="row" style="display: flex; flex-wrap: wrap">
+		<% trail_data.forEach(function(e){ %>
+		<div class="col-md-3 col-sm-6">
+			<div id="thumbnail_show" class="thumbnail">
+				<img alt="Image not found :(" src="<%= e.image %>">
+				<div class="caption">
+					<%= e.name %>
+				</div>
+				<a class="btn btn-primary" href="/trails/<%= e._id %>">More Info</a>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+
+</div>
+<%- include("../partials/footer") %>

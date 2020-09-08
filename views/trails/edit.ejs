@@ -1,0 +1,56 @@
+<!-- EJS file for trail edit form [Done]-->
+
+<%- include("../partials/header") %>
+
+<div class="container">
+	 <div class="row">
+        <h1 style="text-align: center">Edit <%= trail.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/trails/<%=trail._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+				
+				
+                <div class="form-group">
+					<label for="title">Trail Name</label>
+                    <input class="form-control" id="title" type="text" name="name" value="<%= trail.name %>">
+                </div>
+
+				<div class="form-group">
+					<label for="location">Location</label>
+                    <input id="location" class="form-control" type="text" name="location" value="<%= trail.location%>">
+                </div>
+				
+				<div class="form-group">
+					<label for="image">Rating</label>
+                    <input id="rating" class="form-control" type="number" name="rating" value="<%= trail.rating%>" min="0" max="5" step="1">
+                </div>
+				
+				<div class="form-group">
+					<label for="distance">Trail Length (km)</label>
+                    <input id="distance" class="form-control" type="number" name="distance" value="<%= trail.distance%>" min="0">
+                </div>
+				
+                <div class="form-group">
+					<label for="description">Description</label>
+                    <input id="description" class="form-control" type="text" name="desc" value="<%= trail.desc %>">
+                </div>
+				
+				 <div class="form-group">
+                    <label for="image">Change Image</label>
+                    <input type="file" id="image" name="image" accept="image/*" value="<%= trail.image %>">
+                </div>
+				
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Update!</button>
+                </div>
+				
+				
+				
+				
+				
+            </form>
+            <a href="/trails">Go Back</a>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer") %>

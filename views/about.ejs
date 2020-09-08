@@ -1,0 +1,49 @@
+<!-- EJS file for about page [Done]-->
+
+<%- include("./partials/header") %>
+
+<div class="container">
+	<div id="about-para">
+		<h1>
+			About
+		</h1>
+		<hr>
+		<h4>
+			<strong>What is Trails Alberta?</strong>
+		</h4>
+		<p>
+			Welcome to Trails Alberta! This website was made for hikers and cyclists in and around Alberta, Canada, looking for new and exciting trail around the province. Feel free to create and comment on some trails! Currently in
+			version 1.
+		</p>
+		<h4>
+			<strong>How was Trails Alberta made?</strong>
+		</h4>
+		<p>
+			The site backend is built on Node.js, Express, and MongoDB. MongoDB Atlas and Heroku are also used to get the website up and running on the internet. As for the front end, HTML5 and CSS3 in combination 
+			with Bootstrap are used. The entire project was constructed on GoormIDE. NPM packages used include:
+		</p>
+		<ul>
+			<li>Passport JS -> Integrated to handle authentication and user security</li>
+			<li>Mongoose -> Added to help access MongoDB</li>
+			<li>Body-Parser -> Used to help handle route requests</li>
+			<li>Flash -> Provides flash messages to user in certain situations</li>
+		</ul>
+		<h4>
+			<strong>Whats next for Trails Alberta?</strong>
+		</h4>
+		<p>
+			On the list of new features includes:
+		</p>
+		<ul>
+			<li>A searching system</li>
+			<li>User profiles</li>
+			<li>Sorting by rating</li>
+		</ul>
+	</div>
+	<hr>
+	<p>
+		Made by Connor Ibbotson. Thanks for viewing! :)
+	</p>
+</div>
+
+<%- include("./partials/footer") %>

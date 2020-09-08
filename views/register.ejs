@@ -1,0 +1,32 @@
+<!-- EJS file for register page [Done]-->
+
+<%- include("./partials/header") %>
+
+<div class="container">
+	<div class="row">
+		<h1 class="title-center">
+			Create an Account
+		</h1>
+		
+		<div class="center-form">
+			<form method="POST" action="/register">
+				<div class="form-group">
+					<input class="form-control" type="text" name="username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="password" name="password" placeholder="Password">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lg btn-success btn-block">
+						Register
+					</button>
+				</div>
+			</form>
+			<p class="center-me">
+				Already have an account? <a href="/login">Sign in!</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<%- include("./partials/footer") %>
